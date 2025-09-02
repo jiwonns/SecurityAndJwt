@@ -1,20 +1,20 @@
 package kr.co.securityjwt.dto;
 
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import kr.co.securityjwt.entity.RoleType;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-@Data
-@NoArgsConstructor
+@Getter
 @AllArgsConstructor
-public class LoginRequestDto {
+@NoArgsConstructor
+public class CustomUserInfoDto {
 
-    @NotNull(message = "이메일은 필수 입력 값입니다.")
-    private String email;
-
-    @NotNull(message = "비밀번호는 필수 입력 값입니다.")
-    private String password;
+  private Long memberId;
+  private String email;
+  private String password;
+  private String name;
+  private RoleType role;
 }
